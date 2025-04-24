@@ -1,14 +1,61 @@
-// Update this page (the content is just a fallback if you fail to update the page)
 
-const Index = () => {
+import AppLayout from "@/components/layout/AppLayout";
+import ClientStats from "@/components/dashboard/ClientStats";
+import ClientList from "@/components/clients/ClientList";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { CalendarClock } from "lucide-react";
+
+export default function Index() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
+    <AppLayout>
+      <div className="space-y-6">
+        <div className="flex items-center justify-between">
+          <h1 className="text-2xl font-bold tracking-tight">Dashboard</h1>
+          <div className="flex items-center gap-2">
+            <Button variant="outline">Esporta Dati</Button>
+            <Button className="bg-clinic-vibrant-blue hover:bg-clinic-blue">Nuovo Cliente</Button>
+          </div>
+        </div>
+        
+        <ClientStats />
+        
+        <div className="grid gap-6 md:grid-cols-6">
+          <Card className="col-span-6 md:col-span-4">
+            <CardHeader className="pb-3">
+              <CardTitle>Clienti Recenti</CardTitle>
+            </CardHeader>
+            <CardContent className="p-0">
+              <ClientList />
+            </CardContent>
+          </Card>
+          
+          <Card className="col-span-6 md:col-span-2">
+            <CardHeader className="flex flex-row items-center justify-between pb-2">
+              <CardTitle className="text-md font-medium">Follow-up Imminenti</CardTitle>
+              <CalendarClock className="h-4 w-4 text-muted-foreground" />
+            </CardHeader>
+            <CardContent>
+              <div className="space-y-4">
+                {[
+                  { client: "Maria Rossi", procedure: "Trattamento Viso", date: "10 Maggio" },
+                  { client: "Giorgio Bianchi", procedure: "Peeling Chimico", date: "15 Maggio" },
+                  { client: "Anna Verdi", procedure: "Botox", date: "20 Maggio" },
+                ].map((item, index) => (
+                  <div key={index} className="border-b pb-3 last:border-0 last:pb-0">
+                    <p className="font-medium text-sm">{item.client}</p>
+                    <p className="text-xs text-muted-foreground">{item.procedure}</p>
+                    <p className="text-xs mt-1 text-clinic-vibrant-blue">{item.date}</p>
+                  </div>
+                ))}
+                <Button variant="link" className="text-clinic-vibrant-blue p-0 w-full text-sm justify-start">
+                  Vedi tutti
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
       </div>
-    </div>
+    </AppLayout>
   );
-};
-
-export default Index;
+}

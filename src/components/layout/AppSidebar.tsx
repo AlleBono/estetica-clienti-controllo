@@ -17,22 +17,22 @@ import { Link } from "react-router-dom";
 const sidebarItems = [
   {
     title: "Clienti",
-    url: "/clients",
+    url: "/admin/clients",
     icon: Users
   },
   {
     title: "Procedimenti",
-    url: "/procedures",
+    url: "/admin/procedures",
     icon: CalendarClock
   },
   {
     title: "Notifiche",
-    url: "/notifications",
+    url: "/admin/notifications",
     icon: Bell
   },
   {
     title: "Profilo",
-    url: "/profile",
+    url: "/admin/profile",
     icon: User
   }
 ];
@@ -42,7 +42,9 @@ export default function AppSidebar() {
     <Sidebar>
       <SidebarHeader className="p-4 flex items-center">
         <SidebarTrigger className="md:hidden mr-2" />
-        <div className="font-semibold text-xl text-clinic-vibrant-blue">EstheticaAdmin</div>
+        <Link to="/admin" className="font-semibold text-xl text-clinic-vibrant-blue">
+          EstheticaAdmin
+        </Link>
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>

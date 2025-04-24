@@ -3,7 +3,8 @@ import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import Landing from "./pages/public/Landing";
 import Index from "./pages/Index";
 import Clients from "./pages/Clients";
 import Procedures from "./pages/Procedures";
@@ -19,10 +20,16 @@ const App = () => (
       <Sonner />
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/clients" element={<Clients />} />
-          <Route path="/procedures" element={<Procedures />} />
-          <Route path="/notifications" element={<Notifications />} />
+          {/* Public routes */}
+          <Route path="/" element={<Landing />} />
+          
+          {/* Admin routes */}
+          <Route path="/admin" element={<Index />} />
+          <Route path="/admin/clients" element={<Clients />} />
+          <Route path="/admin/procedures" element={<Procedures />} />
+          <Route path="/admin/notifications" element={<Notifications />} />
+          
+          {/* Not found */}
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

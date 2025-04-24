@@ -1,7 +1,7 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+import MarketingIdeas from "@/components/marketing/MarketingIdeas";
 
 export default function Landing() {
   return (
@@ -80,6 +80,9 @@ export default function Landing() {
           </div>
         </div>
       </section>
+
+      {/* Marketing Ideas Section */}
+      <MarketingIdeas />
 
       {/* Results Section */}
       <section className="py-16 px-4">

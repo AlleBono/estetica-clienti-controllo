@@ -31,7 +31,7 @@ export default function NotificationList() {
       <div className="p-4">
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-xl font-semibold text-clinic-text">Notifiche Follow-up</h2>
-          <Button className="bg-clinic-vibrant-blue hover:bg-clinic-blue">
+          <Button className="bg-primary hover:bg-primary/90">
             Configura Notifiche
           </Button>
         </div>
@@ -57,7 +57,7 @@ export default function NotificationList() {
                   <TableCell>
                     <Badge className={
                       notification.status === "Inviato" ? "bg-green-100 text-green-800 hover:bg-green-200" :
-                      notification.status === "In attesa" ? "bg-yellow-100 text-yellow-800 hover:bg-yellow-200" :
+                      notification.status === "In attesa" ? "bg-amber-100 text-amber-800 hover:bg-amber-200" :
                       "bg-red-100 text-red-800 hover:bg-red-200"
                     }>
                       {notification.status}
@@ -75,7 +75,7 @@ export default function NotificationList() {
                     ) : (
                       <Button 
                         variant="link" 
-                        className="text-clinic-vibrant-blue p-0 h-auto"
+                        className="text-primary p-0 h-auto"
                       >
                         Dettagli
                       </Button>

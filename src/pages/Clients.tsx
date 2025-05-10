@@ -8,13 +8,13 @@ export default function Clients() {
     <AppLayout>
       <div className="space-y-6 max-w-[1400px] mx-auto">
         <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-bold tracking-tight bg-gradient-to-r from-clinic-vibrant-blue to-clinic-blue bg-clip-text text-transparent">
+          <h1 className="text-2xl font-bold tracking-tight bg-gradient-to-r from-clinic-gold to-clinic-deep-gold bg-clip-text text-transparent">
             Gestione Clienti
           </h1>
         </div>
         
         <div className="grid gap-6 mb-8">
-          <Card className="bg-gradient-to-br from-clinic-light-blue/10 to-white border-neutral-200/50">
+          <Card className="bg-gradient-to-br from-clinic-light-gold/10 to-white border-neutral-200/50">
             <CardHeader className="pb-0">
               <CardTitle className="text-lg font-medium">
                 Risultati dei Nostri Trattamenti

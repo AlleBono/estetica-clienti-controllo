@@ -8,7 +8,7 @@ export default function Notifications() {
     <AppLayout>
       <div className="space-y-6 max-w-[1400px] mx-auto">
         <div className="flex items-center justify-between">
-          <h1 className="text-2xl font-bold tracking-tight bg-gradient-to-r from-clinic-vibrant-blue to-clinic-blue bg-clip-text text-transparent">
+          <h1 className="text-2xl font-bold tracking-tight bg-gradient-to-r from-clinic-gold to-clinic-deep-gold bg-clip-text text-transparent">
             Sistema di Notifiche e Casi di Successo
           </h1>
         </div>

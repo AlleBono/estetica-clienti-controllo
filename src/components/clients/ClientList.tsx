@@ -46,7 +46,7 @@ export default function ClientList() {
             </p>
           </div>
           <Button 
-            className="bg-amber-600 hover:bg-amber-700 transition-colors duration-200"
+            className="bg-clinic-gold hover:bg-clinic-deep-gold transition-colors duration-200"
           >
             <Plus className="mr-2 h-4 w-4" />
             Nuovo Cliente
@@ -59,7 +59,7 @@ export default function ClientList() {
             placeholder="Cerca per nome o email..." 
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
-            className="pl-10 border-neutral-200/70 bg-white/70 backdrop-blur-sm focus:border-amber-600 transition-colors duration-200"
+            className="pl-10 border-neutral-200/70 bg-white/70 backdrop-blur-sm focus:border-clinic-gold transition-colors duration-200"
           />
         </div>
       </CardHeader>
@@ -93,19 +93,19 @@ export default function ClientList() {
                     </TableCell>
                     <TableCell>{client.lastVisit}</TableCell>
                     <TableCell>
-                      <span className="text-amber-700 font-medium">
+                      <span className="text-clinic-deep-gold font-medium">
                         {client.nextFollowup}
                       </span>
                     </TableCell>
                     <TableCell>
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-amber-100 text-amber-800">
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-clinic-light-gold/30 text-clinic-deep-gold">
                         {client.treatment}
                       </span>
                     </TableCell>
                     <TableCell>
                       <Link 
                         to={`/clients/${client.id}`} 
-                        className="text-amber-700 hover:text-amber-900 transition-colors duration-200 text-sm font-medium"
+                        className="text-clinic-gold hover:text-clinic-deep-gold transition-colors duration-200 text-sm font-medium"
                       >
                         Visualizza Dettagli
                       </Link>

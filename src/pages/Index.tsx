@@ -14,7 +14,7 @@ export default function Index() {
           <h1 className="text-2xl font-bold tracking-tight">Dashboard</h1>
           <div className="flex items-center gap-2">
             <Button variant="outline">Esporta Dati</Button>
-            <Button className="bg-clinic-vibrant-blue hover:bg-clinic-blue">Nuovo Cliente</Button>
+            <Button className="bg-clinic-gold hover:bg-clinic-deep-gold">Nuovo Cliente</Button>
           </div>
         </div>
         
@@ -45,10 +45,10 @@ export default function Index() {
                   <div key={index} className="border-b pb-3 last:border-0 last:pb-0">
                     <p className="font-medium text-sm">{item.client}</p>
                     <p className="text-xs text-muted-foreground">{item.procedure}</p>
-                    <p className="text-xs mt-1 text-clinic-vibrant-blue">{item.date}</p>
+                    <p className="text-xs mt-1 text-clinic-gold">{item.date}</p>
                   </div>
                 ))}
-                <Button variant="link" className="text-clinic-vibrant-blue p-0 w-full text-sm justify-start">
+                <Button variant="link" className="text-clinic-gold p-0 w-full text-sm justify-start">
                   Vedi tutti
                 </Button>
               </div>

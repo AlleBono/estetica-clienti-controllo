@@ -42,7 +42,7 @@ export default function AppSidebar() {
     <Sidebar>
       <SidebarHeader className="p-4 flex items-center">
         <SidebarTrigger className="md:hidden mr-2" />
-        <Link to="/admin" className="font-semibold text-xl text-amber-600">
+        <Link to="/admin" className="font-semibold text-xl text-primary">
           EstheticaAdmin
         </Link>
       </SidebarHeader>
@@ -55,7 +55,7 @@ export default function AppSidebar() {
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
                     <Link to={item.url} className="flex items-center gap-3">
-                      <item.icon size={20} className="text-amber-600" />
+                      <item.icon size={20} className="text-primary" />
                       <span>{item.title}</span>
                     </Link>
                   </SidebarMenuButton>

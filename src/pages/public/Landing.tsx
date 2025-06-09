@@ -1,19 +1,31 @@
+
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import MarketingIdeas from "@/components/marketing/MarketingIdeas";
+import { Star, Sparkles, Heart, Award } from "lucide-react";
 
 export default function Landing() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-clinic-light-gold to-white">
+    <div className="min-h-screen bg-gradient-to-br from-clinic-light-gold via-white to-clinic-background overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-br from-clinic-gold/20 to-clinic-deep-gold/10 rounded-full blur-xl animate-pulse"></div>
+        <div className="absolute top-40 right-20 w-24 h-24 bg-gradient-to-br from-clinic-vibrant-blue/20 to-clinic-light-blue/10 rounded-full blur-lg animate-pulse delay-1000"></div>
+        <div className="absolute bottom-40 left-1/4 w-40 h-40 bg-gradient-to-br from-clinic-gold/15 to-transparent rounded-full blur-2xl animate-pulse delay-500"></div>
+      </div>
+
       {/* Navigation */}
-      <nav className="bg-white/50 backdrop-blur-sm border-b border-neutral-200/50">
+      <nav className="relative bg-white/60 backdrop-blur-md border-b border-clinic-gold/20 shadow-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
-            <div className="text-xl font-semibold text-clinic-gold">
-              EstheticaClinic
+            <div className="flex items-center gap-2">
+              <Sparkles className="h-6 w-6 text-clinic-gold" />
+              <div className="text-xl font-bold bg-gradient-to-r from-clinic-gold to-clinic-deep-gold bg-clip-text text-transparent">
+                EstheticaClinic
+              </div>
             </div>
-            <Button asChild className="bg-clinic-gold hover:bg-clinic-deep-gold">
+            <Button asChild className="bg-gradient-to-r from-clinic-gold to-clinic-deep-gold hover:from-clinic-deep-gold hover:to-clinic-gold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
               <Link to="/admin">Area Riservata</Link>
             </Button>
           </div>
@@ -21,59 +33,102 @@ export default function Landing() {
       </nav>
 
       {/* Hero Section */}
-      <section className="py-20 px-4">
+      <section className="relative py-24 px-4">
         <div className="max-w-7xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight bg-gradient-to-r from-clinic-gold to-clinic-deep-gold bg-clip-text text-transparent mb-6">
-            Trasforma la Tua Bellezza Naturale
-          </h1>
-          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
-            Trattamenti personalizzati e risultati straordinari per valorizzare la tua unicità
-          </p>
-          <Button asChild size="lg" className="bg-clinic-gold hover:bg-clinic-deep-gold">
-            <a href="#treatments">Scopri i Trattamenti</a>
-          </Button>
+          <div className="animate-fade-in">
+            <h1 className="text-5xl md:text-7xl font-bold tracking-tight bg-gradient-to-r from-clinic-gold via-clinic-deep-gold to-clinic-vibrant-blue bg-clip-text text-transparent mb-8 leading-tight">
+              Trasforma la Tua
+              <span className="block">Bellezza Naturale</span>
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
+              Trattamenti personalizzati e risultati straordinari per valorizzare la tua unicità con la tecnologia più avanzata
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button asChild size="lg" className="bg-gradient-to-r from-clinic-gold to-clinic-deep-gold hover:from-clinic-deep-gold hover:to-clinic-gold text-lg px-8 py-4 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
+                <a href="#treatments">
+                  <Heart className="mr-2 h-5 w-5" />
+                  Scopri i Trattamenti
+                </a>
+              </Button>
+              <Button variant="outline" size="lg" className="border-clinic-gold text-clinic-deep-gold hover:bg-clinic-gold/10 text-lg px-8 py-4 transform hover:scale-105 transition-all duration-300">
+                <Award className="mr-2 h-5 w-5" />
+                Consulenza Gratuita
+              </Button>
+            </div>
+          </div>
+          
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 max-w-4xl mx-auto">
+            {[
+              { number: "500+", label: "Clienti Soddisfatte" },
+              { number: "98%", label: "Tasso di Successo" },
+              { number: "10+", label: "Anni di Esperienza" },
+              { number: "15+", label: "Trattamenti Disponibili" }
+            ].map((stat, index) => (
+              <div key={index} className="text-center animate-fade-in" style={{animationDelay: `${index * 0.2}s`}}>
+                <div className="text-3xl md:text-4xl font-bold text-clinic-deep-gold mb-2">{stat.number}</div>
+                <div className="text-sm md:text-base text-gray-600">{stat.label}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* Treatments Section */}
-      <section id="treatments" className="py-16 px-4 bg-white/50">
+      <section id="treatments" className="relative py-20 px-4">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-clinic-text">
-            I Nostri Trattamenti
-          </h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-clinic-deep-gold to-clinic-vibrant-blue bg-clip-text text-transparent mb-6">
+              I Nostri Trattamenti
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Scegli tra una vasta gamma di trattamenti all'avanguardia per ogni tipo di pelle
+            </p>
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
                 title: "Trattamenti Viso",
-                description: "Ringiovanimento e idratazione profonda per una pelle radiosa",
-                image: "https://source.unsplash.com/featured/800x600?face,treatment"
+                description: "Ringiovanimento e idratazione profonda per una pelle radiosa e luminosa",
+                image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                gradient: "from-pink-400/20 to-clinic-gold/20"
               },
               {
                 title: "Peeling Professionale",
-                description: "Rinnova la tua pelle con trattamenti mirati ed efficaci",
-                image: "https://source.unsplash.com/featured/800x600?skincare"
+                description: "Rinnova la tua pelle con trattamenti mirati ed efficaci di ultima generazione",
+                image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                gradient: "from-blue-400/20 to-clinic-vibrant-blue/20"
               },
               {
                 title: "Trattamenti Anti-età",
-                description: "Soluzioni innovative per contrastare i segni del tempo",
-                image: "https://source.unsplash.com/featured/800x600?beauty,clinic"
+                description: "Soluzioni innovative per contrastare i segni del tempo con risultati duraturi",
+                image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+                gradient: "from-purple-400/20 to-clinic-deep-gold/20"
               }
             ].map((treatment, index) => (
-              <Card key={index} className="overflow-hidden border-neutral-200/50">
+              <Card key={index} className="group overflow-hidden border-clinic-gold/20 shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:scale-105 bg-white/80 backdrop-blur-sm">
                 <div className="aspect-[4/3] relative overflow-hidden">
                   <img 
                     src={treatment.image}
                     alt={treatment.title}
-                    className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   />
+                  <div className={`absolute inset-0 bg-gradient-to-t ${treatment.gradient} to-transparent opacity-60`}></div>
+                  <div className="absolute top-4 right-4">
+                    <Star className="h-6 w-6 text-clinic-gold fill-current" />
+                  </div>
                 </div>
-                <CardContent className="p-6">
-                  <h3 className="text-xl font-semibold mb-2 text-clinic-vibrant-blue">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-bold mb-4 text-clinic-deep-gold group-hover:text-clinic-vibrant-blue transition-colors duration-300">
                     {treatment.title}
                   </h3>
-                  <p className="text-gray-600">
+                  <p className="text-gray-700 leading-relaxed">
                     {treatment.description}
                   </p>
+                  <Button variant="outline" className="mt-6 border-clinic-gold text-clinic-deep-gold hover:bg-clinic-gold/10 transition-all duration-300">
+                    Scopri di Più
+                  </Button>
                 </CardContent>
               </Card>
             ))}
@@ -85,40 +140,54 @@ export default function Landing() {
       <MarketingIdeas />
 
       {/* Results Section */}
-      <section className="py-16 px-4">
+      <section className="relative py-20 px-4 bg-gradient-to-r from-clinic-background/50 to-white/50">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12 text-clinic-text">
-            Risultati Reali
-          </h2>
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-clinic-deep-gold to-clinic-vibrant-blue bg-clip-text text-transparent mb-6">
+              Risultati Reali
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Le trasformazioni delle nostre clienti parlano da sole
+            </p>
+          </div>
+          
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {[1, 2].map((i) => (
-              <Card key={i} className="overflow-hidden border-neutral-200/50">
-                <CardContent className="p-6">
-                  <div className="grid grid-cols-2 gap-4">
+              <Card key={i} className="overflow-hidden border-clinic-gold/20 shadow-xl hover:shadow-2xl transition-all duration-500 bg-white/90 backdrop-blur-sm">
+                <CardContent className="p-8">
+                  <div className="grid grid-cols-2 gap-6">
                     <div className="space-y-2">
-                      <div className="aspect-[3/4] relative">
+                      <div className="aspect-[3/4] relative rounded-xl overflow-hidden">
                         <img
-                          src={`https://source.unsplash.com/featured/600x800?face,before&${i}`}
+                          src={`https://images.unsplash.com/photo-154897290${i + 3}505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80`}
                           alt="Prima del trattamento"
-                          className="w-full h-full object-cover rounded-lg"
+                          className="w-full h-full object-cover"
                         />
-                        <div className="absolute top-2 left-2 px-3 py-1 bg-black/50 text-white rounded-full text-sm">
+                        <div className="absolute top-3 left-3 px-4 py-2 bg-gradient-to-r from-black/70 to-black/50 text-white rounded-full text-sm font-medium backdrop-blur-sm">
                           Prima
                         </div>
                       </div>
                     </div>
                     <div className="space-y-2">
-                      <div className="aspect-[3/4] relative">
+                      <div className="aspect-[3/4] relative rounded-xl overflow-hidden">
                         <img
-                          src={`https://source.unsplash.com/featured/600x800?face,after&${i}`}
+                          src={`https://images.unsplash.com/photo-158109122${i + 5}825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80`}
                           alt="Dopo il trattamento"
-                          className="w-full h-full object-cover rounded-lg"
+                          className="w-full h-full object-cover"
                         />
-                        <div className="absolute top-2 left-2 px-3 py-1 bg-black/50 text-white rounded-full text-sm">
+                        <div className="absolute top-3 left-3 px-4 py-2 bg-gradient-to-r from-clinic-gold to-clinic-deep-gold text-white rounded-full text-sm font-medium backdrop-blur-sm">
                           Dopo
                         </div>
                       </div>
                     </div>
+                  </div>
+                  <div className="mt-6 text-center">
+                    <div className="flex justify-center space-x-1 mb-2">
+                      {[...Array(5)].map((_, starIndex) => (
+                        <Star key={starIndex} className="h-5 w-5 text-clinic-gold fill-current" />
+                      ))}
+                    </div>
+                    <p className="text-gray-600 italic">"Risultati incredibili, super consigliato!"</p>
                   </div>
                 </CardContent>
               </Card>
@@ -128,11 +197,31 @@ export default function Landing() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-white/50 border-t border-neutral-200/50 py-12">
-        <div className="max-w-7xl mx-auto px-4 text-center">
-          <p className="text-gray-600">
-            © 2025 EstheticaClinic. Tutti i diritti riservati.
-          </p>
+      <footer className="relative bg-gradient-to-r from-clinic-gold/10 to-clinic-vibrant-blue/10 border-t border-clinic-gold/20 py-16">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+            <div className="text-center md:text-left">
+              <div className="flex items-center justify-center md:justify-start gap-2 mb-4">
+                <Sparkles className="h-6 w-6 text-clinic-gold" />
+                <span className="text-xl font-bold text-clinic-deep-gold">EstheticaClinic</span>
+              </div>
+              <p className="text-gray-600">La tua bellezza è la nostra passione</p>
+            </div>
+            <div className="text-center">
+              <h4 className="font-semibold text-clinic-deep-gold mb-4">Contatti</h4>
+              <p className="text-gray-600">info@estheticaclinic.it</p>
+              <p className="text-gray-600">+39 123 456 7890</p>
+            </div>
+            <div className="text-center md:text-right">
+              <h4 className="font-semibold text-clinic-deep-gold mb-4">Seguici</h4>
+              <p className="text-gray-600">@estheticaclinic</p>
+            </div>
+          </div>
+          <div className="text-center pt-8 border-t border-clinic-gold/20">
+            <p className="text-gray-600">
+              © 2025 EstheticaClinic. Tutti i diritti riservati.
+            </p>
+          </div>
         </div>
       </footer>
     </div>

@@ -1,10 +1,14 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import MarketingIdeas from "@/components/marketing/MarketingIdeas";
+import ConsultationForm from "@/components/forms/ConsultationForm";
 import { Star, Sparkles, Heart, Award } from "lucide-react";
 
 export default function Landing() {
+  const [consultationFormOpen, setConsultationFormOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-clinic-light-gold via-white to-clinic-background overflow-hidden">
       {/* Background decoration */}
@@ -49,7 +53,12 @@ export default function Landing() {
                   Descubre los Tratamientos
                 </a>
               </Button>
-              <Button variant="outline" size="lg" className="border-clinic-gold text-clinic-deep-gold hover:bg-clinic-gold/10 text-lg px-8 py-4 transform hover:scale-105 transition-all duration-300">
+              <Button 
+                onClick={() => setConsultationFormOpen(true)}
+                variant="outline" 
+                size="lg" 
+                className="border-clinic-gold text-clinic-deep-gold hover:bg-clinic-gold/10 text-lg px-8 py-4 transform hover:scale-105 transition-all duration-300"
+              >
                 <Award className="mr-2 h-5 w-5" />
                 Consulta Gratuita
               </Button>
@@ -222,6 +231,12 @@ export default function Landing() {
           </div>
         </div>
       </footer>
+
+      {/* Consultation Form Modal */}
+      <ConsultationForm 
+        open={consultationFormOpen} 
+        onOpenChange={setConsultationFormOpen} 
+      />
     </div>
   );
 }

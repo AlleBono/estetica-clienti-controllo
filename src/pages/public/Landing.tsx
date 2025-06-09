@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -21,38 +20,18 @@ export default function Landing() {
         </div>
       </nav>
 
-      {/* Hero Section with Image */}
+      {/* Hero Section */}
       <section className="py-20 px-4">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            {/* Content Column */}
-            <div className="text-center lg:text-left">
-              <h1 className="text-4xl md:text-6xl font-bold tracking-tight bg-gradient-to-r from-clinic-gold to-clinic-deep-gold bg-clip-text text-transparent mb-6">
-                Trasforma la Tua Bellezza Naturale
-              </h1>
-              <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto lg:mx-0 mb-8">
-                Trattamenti personalizzati e risultati straordinari per valorizzare la tua unicità
-              </p>
-              <Button asChild size="lg" className="bg-clinic-gold hover:bg-clinic-deep-gold">
-                <a href="#treatments">Scopri i Trattamenti</a>
-              </Button>
-            </div>
-            
-            {/* Image Column */}
-            <div className="relative">
-              <div className="aspect-[4/5] relative overflow-hidden rounded-2xl shadow-2xl">
-                <img
-                  src="https://images.unsplash.com/photo-1649972904349-6e44c42644a7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                  alt="Giovane donna che rappresenta bellezza e giovinezza"
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-clinic-gold/20 to-transparent"></div>
-              </div>
-              {/* Decorative elements */}
-              <div className="absolute -top-4 -right-4 w-24 h-24 bg-clinic-light-gold rounded-full opacity-60"></div>
-              <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-clinic-gold/30 rounded-full opacity-40"></div>
-            </div>
-          </div>
+        <div className="max-w-7xl mx-auto text-center">
+          <h1 className="text-4xl md:text-6xl font-bold tracking-tight bg-gradient-to-r from-clinic-gold to-clinic-deep-gold bg-clip-text text-transparent mb-6">
+            Trasforma la Tua Bellezza Naturale
+          </h1>
+          <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+            Trattamenti personalizzati e risultati straordinari per valorizzare la tua unicità
+          </p>
+          <Button asChild size="lg" className="bg-clinic-gold hover:bg-clinic-deep-gold">
+            <a href="#treatments">Scopri i Trattamenti</a>
+          </Button>
         </div>
       </section>
 

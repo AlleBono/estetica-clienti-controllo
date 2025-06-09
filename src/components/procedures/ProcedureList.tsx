@@ -5,13 +5,13 @@ import { Input } from "../ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
 import { useState } from "react";
 
-// Mock data for procedures
+// Datos simulados para procedimientos
 const mockProcedures = [
-  { id: 1, name: "Trattamento Viso", client: "Maria Rossi", date: "2023-04-10", followupPeriod: "30 giorni", status: "Completato" },
-  { id: 2, name: "Peeling Chimico", client: "Giorgio Bianchi", date: "2023-04-05", followupPeriod: "45 giorni", status: "Completato" },
-  { id: 3, name: "Botox", client: "Anna Verdi", date: "2023-04-15", followupPeriod: "60 giorni", status: "Completato" },
-  { id: 4, name: "Acido Ialuronico", client: "Marco Neri", date: "2023-04-20", followupPeriod: "30 giorni", status: "Completato" },
-  { id: 5, name: "Microdermoabrasione", client: "Sofia Russo", date: "2023-04-25", followupPeriod: "14 giorni", status: "In corso" },
+  { id: 1, name: "Tratamiento Facial", client: "María Rossi", date: "2023-04-10", followupPeriod: "30 días", status: "Completado" },
+  { id: 2, name: "Peeling Químico", client: "Jorge Blanco", date: "2023-04-05", followupPeriod: "45 días", status: "Completado" },
+  { id: 3, name: "Botox", client: "Ana Verde", date: "2023-04-15", followupPeriod: "60 días", status: "Completado" },
+  { id: 4, name: "Ácido Hialurónico", client: "Marco Negro", date: "2023-04-20", followupPeriod: "30 días", status: "Completado" },
+  { id: 5, name: "Microdermoabrasión", client: "Sofía Roja", date: "2023-04-25", followupPeriod: "14 días", status: "En progreso" },
 ];
 
 export default function ProcedureList() {
@@ -33,14 +33,14 @@ export default function ProcedureList() {
     <div className="rounded-md border bg-white shadow animate-fade-in">
       <div className="p-4">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-semibold text-clinic-text">Procedimenti</h2>
+          <h2 className="text-xl font-semibold text-clinic-text">Procedimientos</h2>
           <Button className="bg-clinic-vibrant-blue hover:bg-clinic-blue">
-            + Nuovo Procedimento
+            + Nuevo Procedimiento
           </Button>
         </div>
         <div className="flex flex-col md:flex-row gap-4 mb-4">
           <Input 
-            placeholder="Cerca per procedimento o cliente..." 
+            placeholder="Buscar por procedimiento o cliente..." 
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
             className="max-w-sm"
@@ -50,13 +50,13 @@ export default function ProcedureList() {
             onValueChange={setStatusFilter}
           >
             <SelectTrigger className="w-[180px]">
-              <SelectValue placeholder="Filtro Status" />
+              <SelectValue placeholder="Filtro Estado" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="all">Tutti</SelectItem>
-              <SelectItem value="Completato">Completato</SelectItem>
-              <SelectItem value="In corso">In corso</SelectItem>
-              <SelectItem value="Pianificato">Pianificato</SelectItem>
+              <SelectItem value="all">Todos</SelectItem>
+              <SelectItem value="Completado">Completado</SelectItem>
+              <SelectItem value="En progreso">En progreso</SelectItem>
+              <SelectItem value="Planificado">Planificado</SelectItem>
             </SelectContent>
           </Select>
         </div>
@@ -64,12 +64,12 @@ export default function ProcedureList() {
           <Table>
             <TableHeader>
               <TableRow>
-                <TableHead>Procedimento</TableHead>
+                <TableHead>Procedimiento</TableHead>
                 <TableHead>Cliente</TableHead>
-                <TableHead>Data</TableHead>
-                <TableHead>Periodo Follow-up</TableHead>
-                <TableHead>Status</TableHead>
-                <TableHead>Azioni</TableHead>
+                <TableHead>Fecha</TableHead>
+                <TableHead>Período de Seguimiento</TableHead>
+                <TableHead>Estado</TableHead>
+                <TableHead>Acciones</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -82,9 +82,9 @@ export default function ProcedureList() {
                     <TableCell>{procedure.followupPeriod}</TableCell>
                     <TableCell>
                       <span className={`px-2 py-1 rounded-full text-xs ${
-                        procedure.status === "Completato" 
+                        procedure.status === "Completado" 
                           ? "bg-green-100 text-green-800" 
-                          : procedure.status === "In corso"
+                          : procedure.status === "En progreso"
                           ? "bg-yellow-100 text-yellow-800"
                           : "bg-blue-100 text-blue-800"
                       }`}>
@@ -93,7 +93,7 @@ export default function ProcedureList() {
                     </TableCell>
                     <TableCell>
                       <Button variant="link" className="text-clinic-vibrant-blue p-0 h-auto">
-                        Dettagli
+                        Detalles
                       </Button>
                     </TableCell>
                   </TableRow>
@@ -101,7 +101,7 @@ export default function ProcedureList() {
               ) : (
                 <TableRow>
                   <TableCell colSpan={6} className="text-center py-4">
-                    Nessun procedimento trovato
+                    No se encontraron procedimientos
                   </TableCell>
                 </TableRow>
               )}

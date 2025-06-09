@@ -4,13 +4,13 @@ import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
 import { useState } from "react";
 
-// Mock data for notifications
+// Datos simulados para notificaciones
 const mockNotifications = [
-  { id: 1, client: "Maria Rossi", procedure: "Trattamento Viso", dueDate: "2023-05-10", status: "Inviato", channel: "Email" },
-  { id: 2, client: "Giorgio Bianchi", procedure: "Peeling Chimico", dueDate: "2023-05-05", status: "Inviato", channel: "SMS" },
-  { id: 3, client: "Anna Verdi", procedure: "Botox", dueDate: "2023-05-15", status: "In attesa", channel: "Email" },
-  { id: 4, client: "Marco Neri", procedure: "Acido Ialuronico", dueDate: "2023-05-20", status: "In attesa", channel: "Email" },
-  { id: 5, client: "Sofia Russo", procedure: "Microdermoabrasione", dueDate: "2023-05-08", status: "Fallito", channel: "SMS" },
+  { id: 1, client: "María Rossi", procedure: "Tratamiento Facial", dueDate: "2023-05-10", status: "Enviado", channel: "Email" },
+  { id: 2, client: "Jorge Blanco", procedure: "Peeling Químico", dueDate: "2023-05-05", status: "Enviado", channel: "SMS" },
+  { id: 3, client: "Ana Verde", procedure: "Botox", dueDate: "2023-05-15", status: "En espera", channel: "Email" },
+  { id: 4, client: "Marco Negro", procedure: "Ácido Hialurónico", dueDate: "2023-05-20", status: "En espera", channel: "Email" },
+  { id: 5, client: "Sofía Roja", procedure: "Microdermoabrasión", dueDate: "2023-05-08", status: "Falló", channel: "SMS" },
 ];
 
 export default function NotificationList() {
@@ -20,7 +20,7 @@ export default function NotificationList() {
     setNotifications(prevNotifications => 
       prevNotifications.map(notification => 
         notification.id === id 
-          ? { ...notification, status: "Inviato" } 
+          ? { ...notification, status: "Enviado" } 
           : notification
       )
     );
@@ -30,9 +30,9 @@ export default function NotificationList() {
     <div className="rounded-md border bg-white shadow animate-fade-in">
       <div className="p-4">
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-xl font-semibold text-clinic-text">Notifiche Follow-up</h2>
+          <h2 className="text-xl font-semibold text-clinic-text">Notificaciones de Seguimiento</h2>
           <Button className="bg-primary hover:bg-primary/90">
-            Configura Notifiche
+            Configurar Notificaciones
           </Button>
         </div>
         <div className="overflow-x-auto">
@@ -40,11 +40,11 @@ export default function NotificationList() {
             <TableHeader>
               <TableRow>
                 <TableHead>Cliente</TableHead>
-                <TableHead>Procedimento</TableHead>
-                <TableHead>Data Prevista</TableHead>
-                <TableHead>Canale</TableHead>
-                <TableHead>Stato</TableHead>
-                <TableHead>Azioni</TableHead>
+                <TableHead>Procedimiento</TableHead>
+                <TableHead>Fecha Prevista</TableHead>
+                <TableHead>Canal</TableHead>
+                <TableHead>Estado</TableHead>
+                <TableHead>Acciones</TableHead>
               </TableRow>
             </TableHeader>
             <TableBody>
@@ -56,28 +56,28 @@ export default function NotificationList() {
                   <TableCell>{notification.channel}</TableCell>
                   <TableCell>
                     <Badge className={
-                      notification.status === "Inviato" ? "bg-green-100 text-green-800 hover:bg-green-200" :
-                      notification.status === "In attesa" ? "bg-amber-100 text-amber-800 hover:bg-amber-200" :
+                      notification.status === "Enviado" ? "bg-green-100 text-green-800 hover:bg-green-200" :
+                      notification.status === "En espera" ? "bg-amber-100 text-amber-800 hover:bg-amber-200" :
                       "bg-red-100 text-red-800 hover:bg-red-200"
                     }>
                       {notification.status}
                     </Badge>
                   </TableCell>
                   <TableCell>
-                    {notification.status === "Fallito" ? (
+                    {notification.status === "Falló" ? (
                       <Button 
                         variant="outline" 
                         size="sm"
                         onClick={() => resendNotification(notification.id)}
                       >
-                        Reinvia
+                        Reenviar
                       </Button>
                     ) : (
                       <Button 
                         variant="link" 
                         className="text-primary p-0 h-auto"
                       >
-                        Dettagli
+                        Detalles
                       </Button>
                     )}
                   </TableCell>

@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Link } from "react-router-dom";
@@ -26,7 +25,7 @@ export default function Landing() {
               </div>
             </div>
             <Button asChild className="bg-gradient-to-r from-clinic-gold to-clinic-deep-gold hover:from-clinic-deep-gold hover:to-clinic-gold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105">
-              <Link to="/admin">Area Riservata</Link>
+              <Link to="/admin">Área Reservada</Link>
             </Button>
           </div>
         </div>
@@ -37,33 +36,32 @@ export default function Landing() {
         <div className="max-w-7xl mx-auto text-center">
           <div className="animate-fade-in">
             <h1 className="text-5xl md:text-7xl font-bold tracking-tight bg-gradient-to-r from-clinic-gold via-clinic-deep-gold to-clinic-vibrant-blue bg-clip-text text-transparent mb-8 leading-tight">
-              Trasforma la Tua
-              <span className="block">Bellezza Naturale</span>
+              Transforma Tu
+              <span className="block">Belleza Natural</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 max-w-3xl mx-auto mb-12 leading-relaxed">
-              Trattamenti personalizzati e risultati straordinari per valorizzare la tua unicità con la tecnologia più avanzata
+              Tratamientos personalizados y resultados extraordinarios para valorar tu unicidad con la tecnología más avanzada
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
               <Button asChild size="lg" className="bg-gradient-to-r from-clinic-gold to-clinic-deep-gold hover:from-clinic-deep-gold hover:to-clinic-gold text-lg px-8 py-4 shadow-xl hover:shadow-2xl transform hover:scale-105 transition-all duration-300">
                 <a href="#treatments">
                   <Heart className="mr-2 h-5 w-5" />
-                  Scopri i Trattamenti
+                  Descubre los Tratamientos
                 </a>
               </Button>
               <Button variant="outline" size="lg" className="border-clinic-gold text-clinic-deep-gold hover:bg-clinic-gold/10 text-lg px-8 py-4 transform hover:scale-105 transition-all duration-300">
                 <Award className="mr-2 h-5 w-5" />
-                Consulenza Gratuita
+                Consulta Gratuita
               </Button>
             </div>
           </div>
           
           {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-16 max-w-4xl mx-auto">
             {[
-              { number: "500+", label: "Clienti Soddisfatte" },
-              { number: "98%", label: "Tasso di Successo" },
-              { number: "10+", label: "Anni di Esperienza" },
-              { number: "15+", label: "Trattamenti Disponibili" }
+              { number: "500+", label: "Clientes Satisfechas" },
+              { number: "10+", label: "Años de Experiencia" },
+              { number: "15+", label: "Tratamientos Disponibles" }
             ].map((stat, index) => (
               <div key={index} className="text-center animate-fade-in" style={{animationDelay: `${index * 0.2}s`}}>
                 <div className="text-3xl md:text-4xl font-bold text-clinic-deep-gold mb-2">{stat.number}</div>
@@ -79,30 +77,30 @@ export default function Landing() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-clinic-deep-gold to-clinic-vibrant-blue bg-clip-text text-transparent mb-6">
-              I Nostri Trattamenti
+              Nuestros Tratamientos
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Scegli tra una vasta gamma di trattamenti all'avanguardia per ogni tipo di pelle
+              Elige entre una amplia gama de tratamientos de vanguardia para todo tipo de piel
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "Trattamenti Viso",
-                description: "Ringiovanimento e idratazione profonda per una pelle radiosa e luminosa",
+                title: "Tratamientos Faciales",
+                description: "Rejuvenecimiento e hidratación profunda para una piel radiante y luminosa",
                 image: "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
                 gradient: "from-pink-400/20 to-clinic-gold/20"
               },
               {
-                title: "Peeling Professionale",
-                description: "Rinnova la tua pelle con trattamenti mirati ed efficaci di ultima generazione",
+                title: "Peeling Profesional",
+                description: "Renueva tu piel con tratamientos dirigidos y eficaces de última generación",
                 image: "https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
                 gradient: "from-blue-400/20 to-clinic-vibrant-blue/20"
               },
               {
-                title: "Trattamenti Anti-età",
-                description: "Soluzioni innovative per contrastare i segni del tempo con risultati duraturi",
+                title: "Tratamientos Anti-edad",
+                description: "Soluciones innovadoras para combatir los signos del tiempo con resultados duraderos",
                 image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
                 gradient: "from-purple-400/20 to-clinic-deep-gold/20"
               }
@@ -127,7 +125,7 @@ export default function Landing() {
                     {treatment.description}
                   </p>
                   <Button variant="outline" className="mt-6 border-clinic-gold text-clinic-deep-gold hover:bg-clinic-gold/10 transition-all duration-300">
-                    Scopri di Più
+                    Descubre Más
                   </Button>
                 </CardContent>
               </Card>
@@ -144,10 +142,10 @@ export default function Landing() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-clinic-deep-gold to-clinic-vibrant-blue bg-clip-text text-transparent mb-6">
-              Risultati Reali
+              Resultados Reales
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Le trasformazioni delle nostre clienti parlano da sole
+              Las transformaciones de nuestras clientas hablan por sí solas
             </p>
           </div>
           
@@ -160,11 +158,11 @@ export default function Landing() {
                       <div className="aspect-[3/4] relative rounded-xl overflow-hidden">
                         <img
                           src={`https://images.unsplash.com/photo-154897290${i + 3}505-98d2b5aba04b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80`}
-                          alt="Prima del trattamento"
+                          alt="Antes del tratamiento"
                           className="w-full h-full object-cover"
                         />
                         <div className="absolute top-3 left-3 px-4 py-2 bg-gradient-to-r from-black/70 to-black/50 text-white rounded-full text-sm font-medium backdrop-blur-sm">
-                          Prima
+                          Antes
                         </div>
                       </div>
                     </div>
@@ -172,11 +170,11 @@ export default function Landing() {
                       <div className="aspect-[3/4] relative rounded-xl overflow-hidden">
                         <img
                           src={`https://images.unsplash.com/photo-158109122${i + 5}825-a6a2a5aee158?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80`}
-                          alt="Dopo il trattamento"
+                          alt="Después del tratamiento"
                           className="w-full h-full object-cover"
                         />
                         <div className="absolute top-3 left-3 px-4 py-2 bg-gradient-to-r from-clinic-gold to-clinic-deep-gold text-white rounded-full text-sm font-medium backdrop-blur-sm">
-                          Dopo
+                          Después
                         </div>
                       </div>
                     </div>
@@ -187,7 +185,7 @@ export default function Landing() {
                         <Star key={starIndex} className="h-5 w-5 text-clinic-gold fill-current" />
                       ))}
                     </div>
-                    <p className="text-gray-600 italic">"Risultati incredibili, super consigliato!"</p>
+                    <p className="text-gray-600 italic">"¡Resultados increíbles, super recomendado!"</p>
                   </div>
                 </CardContent>
               </Card>
@@ -205,21 +203,21 @@ export default function Landing() {
                 <Sparkles className="h-6 w-6 text-clinic-gold" />
                 <span className="text-xl font-bold text-clinic-deep-gold">EstheticaClinic</span>
               </div>
-              <p className="text-gray-600">La tua bellezza è la nostra passione</p>
+              <p className="text-gray-600">Tu belleza es nuestra pasión</p>
             </div>
             <div className="text-center">
-              <h4 className="font-semibold text-clinic-deep-gold mb-4">Contatti</h4>
-              <p className="text-gray-600">info@estheticaclinic.it</p>
-              <p className="text-gray-600">+39 123 456 7890</p>
+              <h4 className="font-semibold text-clinic-deep-gold mb-4">Contactos</h4>
+              <p className="text-gray-600">info@estheticaclinic.es</p>
+              <p className="text-gray-600">+34 123 456 7890</p>
             </div>
             <div className="text-center md:text-right">
-              <h4 className="font-semibold text-clinic-deep-gold mb-4">Seguici</h4>
+              <h4 className="font-semibold text-clinic-deep-gold mb-4">Síguenos</h4>
               <p className="text-gray-600">@estheticaclinic</p>
             </div>
           </div>
           <div className="text-center pt-8 border-t border-clinic-gold/20">
             <p className="text-gray-600">
-              © 2025 EstheticaClinic. Tutti i diritti riservati.
+              © 2025 EstheticaClinic. Todos los derechos reservados.
             </p>
           </div>
         </div>

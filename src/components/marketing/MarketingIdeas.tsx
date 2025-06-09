@@ -4,36 +4,36 @@ import { Leaf, Rocket, HandHeart, Users, Smartphone } from "lucide-react";
 
 const marketingStrategies = [
   {
-    title: "Personalizzazione Intelligente",
-    description: "Trattamenti su misura basati sul tuo tipo di pelle e le tue esigenze specifiche",
+    title: "Personalización Inteligente",
+    description: "Tratamientos a medida basados en tu tipo de piel y tus necesidades específicas",
     icon: HandHeart,
     score: 9,
     gradient: "from-clinic-light-gold/20 to-clinic-light-gold/80"
   },
   {
-    title: "Virtual Beauty Preview",
-    description: "Prova virtualmente i risultati dei nostri trattamenti con la tecnologia AR",
+    title: "Vista Previa Virtual de Belleza",
+    description: "Prueba virtualmente los resultados de nuestros tratamientos con tecnología AR",
     icon: Smartphone,
     score: 9,
     gradient: "from-stone-100 to-clinic-light-gold/60"
   },
   {
-    title: "Sfide Beauty",
-    description: "Partecipa alle nostre sfide skincare e vinci premi esclusivi",
+    title: "Desafíos de Belleza",
+    description: "Participa en nuestros desafíos de cuidado de la piel y gana premios exclusivos",
     icon: Rocket,
     score: 5,
     gradient: "from-neutral-100 to-clinic-light-gold/40"
   },
   {
-    title: "Influencer Partnership",
-    description: "Scopri le esperienze autentiche dei nostri partner locali",
+    title: "Colaboración con Influencers",
+    description: "Descubre las experiencias auténticas de nuestros socios locales",
     icon: Users,
     score: 3,
     gradient: "from-gray-100 to-clinic-light-gold/30"
   },
   {
-    title: "Eco-Beauty",
-    description: "Trattamenti sostenibili e rispettosi dell'ambiente",
+    title: "Eco-Belleza",
+    description: "Tratamientos sostenibles y respetuosos con el medio ambiente",
     icon: Leaf,
     score: 8,
     gradient: "from-clinic-light-gold/40 to-clinic-light-gold/70"
@@ -45,7 +45,7 @@ export default function MarketingIdeas() {
     <section className="py-16 px-4">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl font-bold text-center mb-12 text-neutral-800">
-          Innovazioni Beauty 2025
+          Innovaciones de Belleza 2025
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {marketingStrategies.map((strategy) => {
@@ -62,7 +62,7 @@ export default function MarketingIdeas() {
                     </div>
                     <div className="flex items-center gap-2">
                       <span className="text-sm font-medium text-neutral-600">
-                        Trend Score:
+                        Puntuación de Tendencia:
                       </span>
                       <span className="text-lg font-semibold text-clinic-deep-gold">
                         {strategy.score}/10

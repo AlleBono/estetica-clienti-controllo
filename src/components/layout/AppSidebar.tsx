@@ -16,22 +16,22 @@ import { Link } from "react-router-dom";
 
 const sidebarItems = [
   {
-    title: "Clienti",
+    title: "Clientes",
     url: "/admin/clients",
     icon: Users
   },
   {
-    title: "Procedimenti",
+    title: "Procedimientos",
     url: "/admin/procedures",
     icon: CalendarClock
   },
   {
-    title: "Notifiche",
+    title: "Notificaciones",
     url: "/admin/notifications",
     icon: Bell
   },
   {
-    title: "Profilo",
+    title: "Perfil",
     url: "/admin/profile",
     icon: User
   }
@@ -48,7 +48,7 @@ export default function AppSidebar() {
       </SidebarHeader>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Gestione</SidebarGroupLabel>
+          <SidebarGroupLabel>Gestión</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {sidebarItems.map((item) => (
